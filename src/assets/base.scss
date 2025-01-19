@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+// Base colors
+$background: #F8FAFC;
+$cardColor: #FFFFFF;
+$cardboard: #E8F3FC;
+$textPrimary: #484954;
+$textSecondary: #000000;
+$placeholder: rgba(30, 41, 59, 0.6);
+$primary: #0D4477;
+$primaryContrast: #F8FAFC;
+$secondary: #489DDA;
+$error: #F44336;
+
+//Office colors
+$yellow1: #FFBE0B;
+$yellow2: #ffc523;
+$yellow3: #ffd254;
+
+$peach1: #FF9B71;
+$peach2: #ffa57f;
+$peach3: #ffb394;
+
+$orange1: #FB5607;
+$orange2: #fb6720;
+$orange3: #fc7f43;
+
+$pink1: #FF006E;
+$pink2: #ff1a7d;
+$pink3: #ff3e91;
+
+$brown1: #97512C;
+$brown2: #a16241;
+$brown3: #b07b5f;
+
+$lavander1: #DBBADD;
+$lavander2: #dfc1e0;
+$lavander3: #e4cbe5;
+
+$purple1: #8338EC;
+$purple2: #8f4cee;
+$purple3: #a168f1;
+
+$mint1: #A9F0D1;
+$mint2: #b2f2d6;
+$mint3: #bef4dc;
+
+$green1: #00B402;
+$green2: #1abc1b;
+$green3: #3ec63f;
+
+$blue1: #0072E8;
+$blue2: #1a80ea;
+$blue3: #3e94ee;
+
+$lightBlue1: #489DDA;
+$lightBlue2: #5aa7de;
+$lightBlue3: #74b5e3;
+
+
+.lightBlue {
+  &::before {
+    background: linear-gradient(180deg, $lightBlue1 0%, $lightBlue1 33%, $lightBlue2 33%, $lightBlue2 65%, $lightBlue3 60%, $lightBlue3 100%);
+  }
+}
+
+.blue {
+  &::before {
+    background: linear-gradient(180deg, $blue1 0%, $blue1 33%, $blue2 33%, $blue2 65%, $blue3 60%, $blue3 100%);
+  }
+}
+
+.green {
+  &::before {
+    background: linear-gradient(180deg, $green1 0%, $green1 33%, $green2 33%, $green2 65%, $green3 60%, $green3 100%);
+  }
+}  
+
+.mint {
+  &::before {
+    background: linear-gradient(180deg, $mint1 0%, $mint1 33%, $mint2 33%, $mint2 65%, $mint3 60%, $mint3 100%);
+  }
+}
+
+.purple {
+  &::before {
+    background: linear-gradient(180deg, $purple1 0%, $purple1 33%, $purple2 33%, $purple2 65%, $purple3 60%, $purple3 100%);
+  }
+}
+
+.lavander {
+  &::before {
+    background: linear-gradient(180deg, $lavander1 0%, $lavander1 33%, $lavander2 33%, $lavander2 65%, $lavander3 60%, $lavander3 100%);
+  }
+}
+
+.orange {
+  &::before {
+    background: linear-gradient(180deg, $orange1 0%, $orange1 33%, $orange2 33%, $orange2 65%, $orange3 60%, $orange3 100%);
+  }
+}
+
+.brown {
+  &::before {
+    background: linear-gradient(180deg, $brown1 0%, $brown1 33%, $brown2 33%, $brown2 65%, $brown3 60%, $brown3 100%);
+  }
+}
+
+.pink {
+  &::before {
+    background: linear-gradient(180deg, $pink1 0%, $pink1 33%, $pink2 33%, $pink2 65%, $pink3 60%, $pink3 100%);
+  }
+}
+
+.peach {
+  &::before {
+    background: linear-gradient(180deg, $peach1 0%, $peach1 33%, $peach2 33%, $peach2 65%, $peach3 60%, $peach3 100%);
+  }
+}
+
+.yellow {
+  &::before {
+    background: linear-gradient(180deg, $yellow1 0%, $yellow1 33%, $yellow2 33%, $yellow2 65%, $yellow3 60%, $yellow3 100%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $background;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 33.89px;
+  letter-spacing: -2%;
+  margin: 16px 0;
+  color: $textPrimary;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: -2%;
+  margin: 17.5px 0 11.6px;
+  color: $textPrimary;
+}
+
+button {
+  background-color: unset;
+  border: unset;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+input {
+  color: $textPrimary;
+  &::placeholder {
+    color: $placeholder;
+  }
+}
+
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  &:disabled {
+    cursor: default;
+    opacity: .6;
+  }
+}
+
+.icon {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+
+  &.arrowDownIcon {
+    background-image: url(./resources/Arrow-down-Icon.svg);
+    height: 7px;
+    width: 15px;
+    transition: transform 0.3s;
+    &.rotate {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  &.editButtonIcon {
+    background-image: url(./resources/Pencil-Icon.svg);
+    height: 18px;
+    width: 17px;
+  }
+  
+  &.staffIcon {
+    background-image: url(./resources/Staff-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+  
+  &.phoneIcon {
+    background-image: url(./resources/Phone-icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+  
+  &.emailIcon {
+    background-image: url(./resources/Email-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+  
+  &.maxStaffIcon {
+    background-image: url(./resources/Max-Staff-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+  
+  &.locationIcon {
+    background-image: url(./resources/location-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+
+  &.plusIcon {
+    background-image: url(./resources/Plus-Icon.svg);
+    height: 20px;
+    width: 20px;
+  }
+
+  &.searchIcon {
+    background-image: url(./resources/Search-Icon.svg);
+    height: 20px;
+    width: 20px;
+  }
+
+  &.menuIcon {
+    background-image: url(./resources/Menu-Icon.svg);
+    background-size: auto;
+    height: 24px;
+    width: 24px;
+  }
+
+  &.leftIcon {
+    background-image: url(./resources/Arrow-Left-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+
+  &.closeIcon {
+    background-image: url(./resources/Close-Icon.svg);
+    height: 24px;
+    width: 24px;
+  }
+}

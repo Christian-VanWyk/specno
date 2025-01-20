@@ -1,9 +1,25 @@
 <template>
     <header>
         <router-link to="/"><i class="icon leftIcon"></i></router-link>
-        <h1>Office</h1>
+        <h1>{{ heading }}</h1>
     </header>
 </template>
+<script>
+    export default {
+        props: {
+            heading: {
+                type: String,
+                required: true
+            }
+        },
+        setup(props) {
+            const heading = props.heading;
+            return {
+                heading
+            }
+        }
+    }
+</script>
 <style lang="scss">
     header {
         padding: 15px 0 23px;

@@ -2,8 +2,10 @@
     <section>
         <div class="headerPlaceholder"></div>
         <h1>All Offices</h1>
-        <OfficeCard :offices="data"/>
-        <AddButton/>
+        <div class="officeBox">
+            <OfficeCard :offices="data"/>
+        </div>
+        <AddButton :buttonType="'newOffice'"/>
     </section>
 </template>
 <style lang="scss">
@@ -11,6 +13,12 @@
         height: 24px;
         width: 100%;
         margin: 16px 0 23px;
+    }
+    .officeBox {
+        display: flex;
+        flex-shrink: 0;
+        gap: 25px;
+        flex-wrap: wrap;
     }
 </style>
 <script>

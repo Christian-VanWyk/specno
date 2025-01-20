@@ -50,6 +50,90 @@ export const useStore = defineStore('store', () => {
                     }
                 ]
             },
+            {
+                key: '3',
+                BasicCompanyInfo: {
+                    officeName: 'Demo Name',
+                    tel: '000 000 0000',
+                    email: 'address@email.com',
+                    officeCapacity: '20',
+                    address: 'somewhere in, Cape Town, 7530',
+                    color: 'pink'
+                },
+                StaffMembers: [
+                    {
+                        id: '245',
+                        icon: '/resources/profile-images/Profile-1.png',
+                        name: 'John Doe',
+                    },
+                    {
+                        id: '457',
+                        icon: '/resources/profile-images/Profile-2.png',
+                        name: 'Jane Doe',
+                    },
+                    {
+                        id: '097',
+                        icon: '/resources/profile-images/Profile-3.png',
+                        name: 'Jane Doey',
+                    }
+                ]
+            },
+            {
+                key: '4',
+                BasicCompanyInfo: {
+                    officeName: 'Demo Name',
+                    tel: '000 000 0000',
+                    email: 'address@email.com',
+                    officeCapacity: '20',
+                    address: 'somewhere in, Cape Town, 7530',
+                    color: 'orange'
+                },
+                StaffMembers: [
+                    {
+                        id: '245',
+                        icon: '/resources/profile-images/Profile-1.png',
+                        name: 'John Doe',
+                    },
+                    {
+                        id: '457',
+                        icon: '/resources/profile-images/Profile-2.png',
+                        name: 'Jane Doe',
+                    },
+                    {
+                        id: '097',
+                        icon: '/resources/profile-images/Profile-3.png',
+                        name: 'Jane Doey',
+                    }
+                ]
+            },
+            {
+                key: '5',
+                BasicCompanyInfo: {
+                    officeName: 'Demo Name',
+                    tel: '000 000 0000',
+                    email: 'address@email.com',
+                    officeCapacity: '20',
+                    address: 'somewhere in, Cape Town, 7530',
+                    color: 'green'
+                },
+                StaffMembers: [
+                    {
+                        id: '245',
+                        icon: '/resources/profile-images/Profile-1.png',
+                        name: 'John Doe',
+                    },
+                    {
+                        id: '457',
+                        icon: '/resources/profile-images/Profile-2.png',
+                        name: 'Jane Doe',
+                    },
+                    {
+                        id: '097',
+                        icon: '/resources/profile-images/Profile-3.png',
+                        name: 'Jane Doey',
+                    }
+                ]
+            },
         ],
         Avatars:[
             {

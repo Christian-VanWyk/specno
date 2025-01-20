@@ -1,14 +1,23 @@
 <template>
     <div>
-        <Button class="AddButton"><i class="icon plusIcon"></i></Button>
+        <Button v-if="buttonType == 'newMember'" class="AddButton"><i class="icon plusIcon"></i></Button>
+        <router-link v-if="buttonType == 'newOffice'" to="/new-office"  class="AddButton"><i class="icon plusIcon"></i></router-link>
     </div>
 </template>
 <script>
+import { ref } from 'vue';
 export default {
     name: 'AddButton',
-    setup() {
+    props: {
+        buttonType: {
+            type: Object,
+            required: true
+        }
+    },
+    setup(props) {
+        const buttonLogic = ref(props.buttonType);
         return {
-            
+            buttonLogic
         }
     }
 }

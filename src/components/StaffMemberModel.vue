@@ -27,7 +27,7 @@
                         </label>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="pagination">
                 <span :class="step === 1 ? 'active' : ''"></span>
                 <span :class="step === 2 ? 'active' : ''"></span>

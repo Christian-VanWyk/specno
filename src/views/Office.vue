@@ -1,12 +1,19 @@
 <template>
-    <section>
-        <Header/>
+    <section class="officePage">
+        <Header :heading="'Office'"/>
         <OfficeCard :offices="data"/>
         <StaffList :staff="data" @deleteMember="removeMember"/>
-        <AddButton @click="addStaffMember"/>
+        <AddButton @click="addStaffMember" :buttonType="'newMember'"/>
         <StaffMemberModel v-if="showAddStaff" @addStaffMember="updateStaffList" @close="closeModel"/>
     </section>
 </template>
+<style lang="scss">
+    .officePage {
+        .card {
+            width: 100%;
+        }
+    }
+</style>
 <script>
 import OfficeCard from '../components/OfficeCard.vue';
 import AddButton from '../components/AddButton.vue';
@@ -36,7 +43,7 @@ export default {
                 return office;
             }
         })
-
+        
         const removeMember = (i) => {
             console.log(i);
         }
@@ -54,7 +61,6 @@ export default {
         }
 
         const closeModel = (val) => {
-            console.log('hit', showAddStaff.val)
             showAddStaff.value = !showAddStaff.value;
         }
 
@@ -68,6 +74,7 @@ export default {
             updateStaffList,
             showAddStaff,
             closeModel,
+            router,
             removeMember
         }
     }

@@ -4,7 +4,7 @@
             <div class="cardTop">
                 <div class="cardHeading">
                     <h2>{{ item.BasicCompanyInfo.officeName }}</h2>
-                    <button @click="goToEdit($event)" class="icon editButtonIcon editButton"></button>
+                    <button @click="goToEdit($event, item.key)" class="icon editButtonIcon editButton"></button>
                 </div>
                 <div class="cardSubHeading">
                     <i class="icon staffIcon"></i>
@@ -55,9 +55,9 @@ export default {
             return;
         }
 
-        const goToEdit = (event) => {
+        const goToEdit = (event, key) => {
             event.preventDefault();
-            router.push('/edit-office/test');
+            router.push(`/edit-office/${key}`);
         }
 
         return {
@@ -71,15 +71,24 @@ export default {
 </script>
 <style lang="scss"> 
     .card {
+        @media (min-width: 1117px) {
+            width: calc(33.333% - 20px);
+        }
+        @media (max-width: 1117px) {
+            width: calc(50% - 20px);
+        }
+        @media (max-width: 708px) {
+            width: 100%;
+        }
         min-height: 132px;
-        max-width: 342px;
+        // max-width: 342px;
+        width: 100%;
         background-color: $cardColor;
         border: 1px solid $cardboard;
         border-radius: 8px;
         overflow: hidden;
         display: flex;
         flex-direction: row;
-        margin-bottom: 24px;
         padding-left: 12px;
         position: relative;
         text-decoration: none;

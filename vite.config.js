@@ -21,5 +21,6 @@ export default defineConfig({
         additionalData: `@use "@/assets/base.scss" as *;`
       }
     }
-  }
+  },
+    base: process.env.NODE_ENV === 'production' ? '/specno/' : '/'
 })

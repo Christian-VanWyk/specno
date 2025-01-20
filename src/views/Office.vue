@@ -1,5 +1,5 @@
 <template>
-    <section class="officePage">
+    <section>
         <Header :heading="'Office'"/>
         <OfficeCard :offices="data"/>
         <StaffList :staff="data" @deleteMember="removeMember"/>
@@ -7,13 +7,6 @@
         <StaffMemberModel v-if="showAddStaff" @addStaffMember="updateStaffList" @close="closeModel"/>
     </section>
 </template>
-<style lang="scss">
-    .officePage {
-        .card {
-            width: 100%;
-        }
-    }
-</style>
 <script>
 import OfficeCard from '../components/OfficeCard.vue';
 import AddButton from '../components/AddButton.vue';

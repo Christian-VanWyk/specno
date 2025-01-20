@@ -81,7 +81,7 @@ export default {
             width: 100%;
         }
         min-height: 132px;
-        // max-width: 342px;
+        margin-bottom: 24px;
         width: 100%;
         background-color: $cardColor;
         border: 1px solid $cardboard;

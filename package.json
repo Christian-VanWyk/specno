@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "hammerjs": "^2.0.8",

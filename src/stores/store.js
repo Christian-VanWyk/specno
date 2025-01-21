@@ -109,7 +109,7 @@ export const useStore = defineStore('store', () => {
             {
                 key: '5',
                 BasicCompanyInfo: {
-                    officeName: 'Demo Name',
+                    officeName: 'Demo Name NO STAFF',
                     tel: '000 000 0000',
                     email: 'address@email.com',
                     officeCapacity: '20',
@@ -117,21 +117,6 @@ export const useStore = defineStore('store', () => {
                     color: 'green'
                 },
                 StaffMembers: [
-                    {
-                        id: '245',
-                        icon: '/resources/profile-images/Profile-1.png',
-                        name: 'John Doe',
-                    },
-                    {
-                        id: '457',
-                        icon: '/resources/profile-images/Profile-2.png',
-                        name: 'Jane Doe',
-                    },
-                    {
-                        id: '097',
-                        icon: '/resources/profile-images/Profile-3.png',
-                        name: 'Jane Doey',
-                    }
                 ]
             },
         ],

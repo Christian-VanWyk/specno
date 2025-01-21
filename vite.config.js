@@ -10,6 +10,10 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -22,5 +26,5 @@ export default defineConfig({
       }
     }
   },
-    base: process.env.NODE_ENV === 'production' ? '/specno/' : '/'
+    base: '/'
 })

@@ -2,7 +2,7 @@
     <section>
         <div class="inputContainer">
             <input v-model="searchValue" @keyup="filterList" type="text" placeholder="Search">
-            <span v-if="!data.length" class="searchMessage">No results</span>
+            <span v-if="!data?.length" class="searchMessage">No results</span>
             <i class="icon searchIcon"></i>
         </div>
         <h2>Staff Members in Office <span>{{ staffCount }}</span></h2>
@@ -40,8 +40,8 @@ export default {
         StaffMemberModel
     },
     setup(props) {
-        const data = ref(props.staff[0].StaffMembers);
-        const staffCount = ref(props.staff[0].StaffMembers.length);
+        const data = ref(props.staff[0]?.StaffMembers);
+        const staffCount = ref(props.staff[0]?.StaffMembers.length || 0);
         const searchValue = ref('');
         const showOptionsModel = ref(false);
         const showDeleteModel = ref(false);

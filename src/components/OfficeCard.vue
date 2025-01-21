@@ -1,5 +1,5 @@
 <template>
-    <router-link v-for="(item, index) in data" :key="index" class="card" :class="item.BasicCompanyInfo.color" :to="`/office/${item.key}`">
+    <router-link v-for="(item, index) in data" :key="index" class="card" :class="[item.BasicCompanyInfo.color,{show: showDetails.id === item.key && showDetails.bool}]" :to="`/office/${item.key}`">
         <div class="cardContainer">
             <div class="cardTop">
                 <div class="cardHeading">
@@ -15,7 +15,7 @@
                 More info
                 <i :class="['icon arrowDownIcon', {rotate: showDetails.id === item.key && showDetails.bool}]"></i>
             </button>
-            <div :class="['cardDetails', {show: showDetails.id === item.key && showDetails.bool}]">
+            <div class="cardDetails">
                 <ul>
                     <li><i class="icon phoneIcon"></i>{{ item.BasicCompanyInfo.tel }}</li>
                     <li><i class="icon emailIcon"></i>{{ item.BasicCompanyInfo.email }}</li>  
@@ -71,16 +71,7 @@ export default {
 </script>
 <style lang="scss"> 
     .card {
-        @media (min-width: 1117px) {
-            width: calc(33.333% - 20px);
-        }
-        @media (max-width: 1117px) {
-            width: calc(50% - 20px);
-        }
-        @media (max-width: 708px) {
-            width: 100%;
-        }
-        min-height: 132px;
+        max-height: 150px;
         margin-bottom: 24px;
         width: 100%;
         background-color: $cardColor;
@@ -92,6 +83,7 @@ export default {
         padding-left: 12px;
         position: relative;
         text-decoration: none;
+        transition: max-height 0.3s ease;
         &::before {
             content: '';
             position: absolute;
@@ -99,6 +91,14 @@ export default {
             height: 100%;
             width: 12px;
             display: block;
+        }
+        &.show {
+            max-height: 327px;
+            .cardContainer {
+                .cardDetails {
+                    max-height: 300px;
+                }
+            }
         }
         .cardContainer {
             width: 100%;
@@ -159,11 +159,8 @@ export default {
             .cardDetails {
                 overflow: hidden;
                 max-height: 0;
-                transition: max-height 0.3s ease;
                 margin: 0 16px 0 22px;        
-                &.show {
-                    max-height: 300px;
-                }
+                transition: max-height 0.3s ease;
                 ul {
                     margin: 17px 0 20px;
                     max-width: 243px;
@@ -178,6 +175,16 @@ export default {
                     }
                 }
             }
+        }
+        @media (min-width: 1117px) {
+            width: calc(33.333% - 20px);
+        }
+        @media (max-width: 1117px) {
+            width: calc(50% - 20px);
+            
+        }
+        @media (max-width: 708px) {
+            width: 100%;
         }
     }
 </style>

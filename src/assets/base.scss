@@ -200,7 +200,7 @@ button {
   flex-shrink: 0;
 
   &.arrowDownIcon {
-    background-image: url(./resources/Arrow-down-Icon.svg);
+    background-image: url(/resources/Arrow-down-Icon.svg);
     height: 7px;
     width: 15px;
     transition: transform 0.3s;
@@ -210,68 +210,68 @@ button {
   }
   
   &.editButtonIcon {
-    background-image: url(./resources/Pencil-Icon.svg);
+    background-image: url(/resources/Pencil-Icon.svg);
     height: 18px;
     width: 17px;
   }
   
   &.staffIcon {
-    background-image: url(./resources/Staff-Icon.svg);
+    background-image: url(/resources/Staff-Icon.svg);
     height: 24px;
     width: 24px;
   }
   
   &.phoneIcon {
-    background-image: url(./resources/Phone-icon.svg);
+    background-image: url(/resources/Cell-Icon.svg);
     height: 24px;
     width: 24px;
   }
   
   &.emailIcon {
-    background-image: url(./resources/Email-Icon.svg);
+    background-image: url(/resources/Email-Icon.svg);
     height: 24px;
     width: 24px;
   }
   
   &.maxStaffIcon {
-    background-image: url(./resources/Max-Staff-Icon.svg);
+    background-image: url(/resources/Max-Staff-Icon.svg);
     height: 24px;
     width: 24px;
   }
   
   &.locationIcon {
-    background-image: url(./resources/location-Icon.svg);
+    background-image: url(/resources/location-Icon.svg);
     height: 24px;
     width: 24px;
   }
 
   &.plusIcon {
-    background-image: url(./resources/Plus-Icon.svg);
+    background-image: url(/resources/Plus-Icon.svg);
     height: 20px;
     width: 20px;
   }
 
   &.searchIcon {
-    background-image: url(./resources/Search-Icon.svg);
+    background-image: url(/resources/Search-Icon.svg);
     height: 20px;
     width: 20px;
   }
 
   &.menuIcon {
-    background-image: url(./resources/Menu-Icon.svg);
+    background-image: url(/resources/Menu-Icon.svg);
     background-size: auto;
     height: 24px;
     width: 24px;
   }
 
   &.leftIcon {
-    background-image: url(./resources/Arrow-Left-Icon.svg);
+    background-image: url(/resources/Arrow-Left-Icon.svg);
     height: 24px;
     width: 24px;
   }
 
   &.closeIcon {
-    background-image: url(./resources/Close-Icon.svg);
+    background-image: url(/resources/Close-Icon.svg);
     height: 24px;
     width: 24px;
   }

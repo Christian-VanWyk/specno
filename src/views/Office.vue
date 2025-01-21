@@ -2,7 +2,7 @@
     <section>
         <Header :heading="'Office'"/>
         <OfficeCard :offices="data"/>
-        <StaffList :staff="data" @deleteMember="removeMember"/>
+        <StaffList :staff="data" />
         <AddButton @click="addStaffMember" :buttonType="'newMember'"/>
         <StaffMemberModel v-if="showAddStaff" @addStaffMember="updateStaffList" @close="closeModel"/>
     </section>
@@ -36,10 +36,6 @@ export default {
                 return office;
             }
         })
-        
-        const removeMember = (i) => {
-            console.log(i);
-        }
 
         const updateStaffList = (staff) => {
             const office = store.state.OfficeData.find((office) => office.key === slug.value);
@@ -68,7 +64,7 @@ export default {
             showAddStaff,
             closeModel,
             router,
-            removeMember
+            store
         }
     }
 }

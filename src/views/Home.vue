@@ -17,7 +17,7 @@
     .officeBox {
         display: flex;
         flex-shrink: 0;
-        gap: 25px;
+        gap: 0 25px;
         flex-wrap: wrap;
     }
 </style>

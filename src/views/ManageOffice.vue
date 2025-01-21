@@ -9,9 +9,9 @@
                 <div class="inputContainer">
                     <input v-model="physicalAddress" class="input" type="text" placeholder="Physical Address">
                 </div>
-                <div class="inputContainer" :class="!emailAddressError == false ? 'error' : ''">
+                <div class="inputContainer" :class="emailAddressError == false ? 'error' : ''">
                     <input v-model="emailAddress" @blur="emailValidation()" class="input" type="text" placeholder="Email Address">
-                    <span v-if="!emailAddressError == false">Email address is not valid</span>
+                    <span v-if="emailAddressError == false">Email address is not valid</span>
                 </div>
                 <div class="inputContainer">
                     <input v-model="phoneNumber" @blur="phoneValidation()" class="input" type="text" placeholder="Phone Number">
@@ -35,13 +35,13 @@
             </form>
             <Button v-if="heading == 'office-edit'" class="button" @click="updateOffice()">Update office</Button>
             <Button v-if="heading == 'office-edit'" class="button white" @click="deleteOffice()">Delete Office</Button>
-            <Button  v-if="heading == 'office-add'" class="button" >Add Office</Button>
+            <Button  v-if="heading == 'office-add'" class="button" @click="addNewOffice()" :disabled="!isFormValid">Add Office</Button>
         </div>
     </section>
 </template>
 <script>
 import Header from '@/components/Header.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import validationHelper from '@/helpers/regex';
 import { useRouter, useRoute } from 'vue-router';
 import { useStore } from '@/stores/store';
@@ -125,6 +125,10 @@ export default {
             }
         });
 
+        let isFormValid = computed(() => {
+            return officeName.value && maximumCapacity.value && emailAddress.value && selectedColor.value && physicalAddress.value && phoneNumber.value;
+        });
+
         const updateOffice = () => {
             const officeItem = store.state.OfficeData.find(item => item.key === route.params.slug);
             if (officeItem) {
@@ -140,15 +144,27 @@ export default {
         } 
 
         const deleteOffice = () => {
-            // Use filter to remove the object with matching key
             store.state.OfficeData = store.state.OfficeData.filter(item => item.key !== route.params.slug);
-
-            // Navigate to home or another route
             router.push('/');
         } 
 
         const addNewOffice = () => {
-            
+            let template = {
+                key: Math.floor(Math.random() * 90) + 10,
+                BasicCompanyInfo: {
+                    officeName: officeName.value,
+                    tel: phoneNumber.value,
+                    email: emailAddress.value,
+                    officeCapacity: maximumCapacity.value,
+                    address: physicalAddress.value,
+                    color: selectedColor.value
+                },
+                StaffMembers: []
+            };
+
+            store.state.OfficeData.push(template);
+
+            router.push('/');
         } 
 
         const toggleColorSelection = (val) => {
@@ -192,12 +208,14 @@ export default {
             route,
             heading,
             updateOffice,
-            deleteOffice
+            deleteOffice,
+            addNewOffice,
+            isFormValid
         }
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .formContainer {
     margin: 45px 0 0;
     .inputContainer {
